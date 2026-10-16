@@ -1,0 +1,150 @@
+relationship 2c2cc2a8-ef9d-e296-ddc1-490eb89fdd28
+	fromColumn: RLM_SCHEDULE_LINES_ALL.HEADER_ID
+	toColumn: RLM_SCHEDULE_HEADERS_ALL.HEADER_ID
+
+relationship 22da5de8-8c52-40fc-8a9f-ef9bfca51315
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_PARTIES.CREATION_DATE
+	toColumn: LocalDateTable_5b3a499e-9ae0-4ba3-89f2-003dab4291c2.Date
+
+relationship 2009d6f4-6739-4ad3-8ff1-27277ce04c6a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_PARTIES.LAST_UPDATE_DATE
+	toColumn: LocalDateTable_13bb533b-6780-4981-9a7c-4ea3ec995a0f.Date
+
+relationship e83e6750-7905-4cde-aaf7-4ce5de2957d7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_PARTIES.PROGRAM_UPDATE_DATE
+	toColumn: LocalDateTable_6c2abe1e-63e0-40fc-9179-4a276d549443.Date
+
+relationship 6faca0fc-c45a-4a2d-ab30-b54e0a9912d1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_PARTIES.LAST_ORDERED_DATE
+	toColumn: LocalDateTable_b3b6d659-3137-4bc5-a348-63f39ae52631.Date
+
+relationship 62a8682e-4d3c-42be-bed0-f0d18e168915
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.LAST_UPDATE_DATE
+	toColumn: LocalDateTable_63a84d02-b279-4744-80be-0cf65512db80.Date
+
+relationship 5d551792-6ace-4341-93d2-eac937f38556
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.CREATION_DATE
+	toColumn: LocalDateTable_3276d66f-9d56-4f85-843a-25904a292ba1.Date
+
+relationship a2d2eed5-ab15-4299-97ee-a2b4434ef14a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.PROGRAM_UPDATE_DATE
+	toColumn: LocalDateTable_0d0a4ae6-3e21-40a5-87e2-941972ebc883.Date
+
+relationship 34523a1e-c72e-45a9-8b02-f7518fb52bfa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.ACCOUNT_ESTABLISHED_DATE
+	toColumn: LocalDateTable_963b196a-ee69-46d7-b085-cc5f2a2a00e1.Date
+
+relationship 7f06493a-21b5-49bc-a11e-2b880d483c14
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.ACCOUNT_TERMINATION_DATE
+	toColumn: LocalDateTable_6df0747c-5337-4daf-b041-fb1abde520f1.Date
+
+relationship 11c061c1-3723-474d-b6e9-2203019d6914
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.ACCOUNT_ACTIVATION_DATE
+	toColumn: LocalDateTable_9dfa9bc4-16f4-4a43-abde-7498af293afb.Date
+
+relationship a489c374-4c49-4c8c-828e-081cce73106b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.HELD_BILL_EXPIRATION_DATE
+	toColumn: LocalDateTable_c912b063-01ca-4302-a668-e7e5d9e5e6a8.Date
+
+relationship 12f79ec7-8aad-4323-b699-2b98b3187e71
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.PO_EFFECTIVE_DATE
+	toColumn: LocalDateTable_d51db95f-8487-43cb-9b48-79c88377bf83.Date
+
+relationship 2b19bf01-5120-4efb-8bd0-73a84cb2f8b3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.PO_EXPIRATION_DATE
+	toColumn: LocalDateTable_c818172d-ec4c-42ac-a01a-d2d3fb9f9e9c.Date
+
+relationship 7a5f95ce-6a5e-48fa-a8ce-3c123cf4af06
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.SUSPENSION_DATE
+	toColumn: LocalDateTable_4cac5d21-4b6d-42f1-b0d1-e39b05b57579.Date
+
+relationship 74489c93-1001-4f30-9d7f-f3ed03a10657
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCOUNTS.STATUS_UPDATE_DATE
+	toColumn: LocalDateTable_9e7a600b-e6c5-4718-ad64-48a41b2039a0.Date
+
+relationship a4089b56-c0ca-8992-c2cf-0ca54684c296
+	fromColumn: RLM_SCHEDULE_HEADERS_ALL.CUSTOMER_ID
+	toColumn: HZ_CUST_ACCOUNTS.CUST_ACCOUNT_ID
+
+relationship 5f637901-758e-a499-128d-5da466b3a849
+	fromColumn: HZ_CUST_ACCOUNTS.PARTY_ID
+	toColumn: HZ_PARTIES.PARTY_ID
+
+relationship 5555d3bb-3ec6-4f03-8566-f7bc71b4e1cc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RLM_CUST_ITEM_CUM_KEYS_ALL.CUM_START_DATE
+	toColumn: LocalDateTable_f3e498ce-36ce-4346-8fda-57573b42aec7.Date
+
+relationship d7f9224d-13db-4fec-8a31-89dbdf97860d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RLM_CUST_ITEM_CUM_KEYS_ALL.LAST_CUM_QTY_UPDATE_DATE
+	toColumn: LocalDateTable_67a687e5-ca9a-4db8-90de-adcc779029dd.Date
+
+relationship eab7f328-7453-41cb-a84e-2048d298d0d2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RLM_CUST_ITEM_CUM_KEYS_ALL.LAST_UPDATE_DATE
+	toColumn: LocalDateTable_90ed01b2-252a-4bc7-91d4-3c73f63cf0f1.Date
+
+relationship 6e20ab52-1344-4d3c-9469-4825d527e2e1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RLM_CUST_ITEM_CUM_KEYS_ALL.CREATION_DATE
+	toColumn: LocalDateTable_038b1641-beac-4a8a-b9d8-cdbbbb1632f5.Date
+
+relationship 62e9f9fb-4152-404a-ac54-05089f5dc69b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RLM_CUST_ITEM_CUM_KEYS_ALL.PROGRAM_UPDATE_DATE
+	toColumn: LocalDateTable_19aef377-efec-4f77-9425-39cbe97d137e.Date
+
+relationship 9bf13cdd-2bb2-41bd-8d38-18a28628f0f8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCT_SITES_ALL.LAST_UPDATE_DATE
+	toColumn: LocalDateTable_9c00aff7-d6f6-434b-90f7-be9757261780.Date
+
+relationship f1eeca9a-7170-41c3-9f32-1c3f7a88f53d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCT_SITES_ALL.CREATION_DATE
+	toColumn: LocalDateTable_bb39e36e-0b29-4860-9708-8f25ae3bc256.Date
+
+relationship 4fab3148-c403-4a34-9f6f-4238e8cffb81
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HZ_CUST_ACCT_SITES_ALL.PROGRAM_UPDATE_DATE
+	toColumn: LocalDateTable_f7799544-3234-4931-aadf-7b4eed90d8b5.Date
+
+relationship 681c14fd-60ff-7d5e-f118-bf71266fffee
+	fromColumn: RLM_CUST_ITEM_CUM_KEYS_ALL.SHIP_TO_ADDRESS_ID
+	toColumn: HZ_CUST_ACCT_SITES_ALL.CUST_ACCT_SITE_ID
+
+relationship 5ccd21dc-4aff-4b52-a6cc-701fcf8d4878
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RLM_SCHEDULE_LINES_ALL.START_DATE_TIME
+	toColumn: LocalDateTable_1610d409-3d8e-4070-83c8-c538db563401.Date
+
+relationship 87780eda-a700-e3b8-b267-c9bbb8b8771f
+	fromColumn: MTL_CUSTOMER_ITEM_XREFS.INVENTORY_ITEM_ID
+	toColumn: MTL_SYSTEM_ITEMS_B.INVENTORY_ITEM_ID
+
+relationship d0797ada-a026-4948-2c48-47296e5193a8
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: RLM_SCHEDULE_LINES_ALL.CUSTOMER_ITEM_ID
+	toColumn: RLM_CUST_ITEM_CUM_KEYS_ALL.CUSTOMER_ITEM_ID
+
+relationship d1850fac-5df7-4e2e-559c-363e3c7a0093
+	fromColumn: RLM_CUST_ITEM_CUM_KEYS_ALL.CUSTOMER_ITEM_ID
+	toColumn: MTL_CUSTOMER_ITEM_XREFS.CUSTOMER_ITEM_ID
+

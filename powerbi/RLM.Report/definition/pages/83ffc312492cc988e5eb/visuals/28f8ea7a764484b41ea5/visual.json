@@ -1,0 +1,498 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "28f8ea7a764484b41ea5",
+  "position": {
+    "x": 0,
+    "y": 289.77361436377834,
+    "z": 0,
+    "height": 430.66354410616708,
+    "width": 1280,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_SCHEDULE_LINES_ALL"
+                    }
+                  },
+                  "Property": "CUSTOMER_ITEM_ID"
+                }
+              },
+              "queryRef": "RLM_SCHEDULE_LINES_ALL.CUSTOMER_ITEM_ID",
+              "nativeQueryRef": "CUSTOMER_ITEM_ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_SCHEDULE_LINES_ALL"
+                    }
+                  },
+                  "Property": "HEADER_ID"
+                }
+              },
+              "queryRef": "RLM_SCHEDULE_LINES_ALL.HEADER_ID",
+              "nativeQueryRef": "HEADER_ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_SCHEDULE_LINES_ALL"
+                    }
+                  },
+                  "Property": "INVENTORY_ITEM_ID"
+                }
+              },
+              "queryRef": "RLM_SCHEDULE_LINES_ALL.INVENTORY_ITEM_ID",
+              "nativeQueryRef": "INVENTORY_ITEM_ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_SCHEDULE_LINES_ALL"
+                    }
+                  },
+                  "Property": "LINE_ID"
+                }
+              },
+              "queryRef": "RLM_SCHEDULE_LINES_ALL.LINE_ID",
+              "nativeQueryRef": "LINE_ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_SCHEDULE_LINES_ALL"
+                    }
+                  },
+                  "Property": "PN Cliente"
+                }
+              },
+              "queryRef": "RLM_SCHEDULE_LINES_ALL.PN Cliente",
+              "nativeQueryRef": "PN Cliente"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_SCHEDULE_LINES_ALL"
+                    }
+                  },
+                  "Property": "PRIMARY_QUANTITY"
+                }
+              },
+              "queryRef": "Sum(RLM_SCHEDULE_LINES_ALL.PRIMARY_QUANTITY)",
+              "nativeQueryRef": "PRIMARY_QUANTITY"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_SCHEDULE_LINES_ALL"
+                    }
+                  },
+                  "Property": "QTY_TYPE_CODE"
+                }
+              },
+              "queryRef": "RLM_SCHEDULE_LINES_ALL.QTY_TYPE_CODE",
+              "nativeQueryRef": "QTY_TYPE_CODE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_SCHEDULE_LINES_ALL"
+                    }
+                  },
+                  "Property": "START_DATE_TIME"
+                }
+              },
+              "queryRef": "RLM_SCHEDULE_LINES_ALL.START_DATE_TIME",
+              "nativeQueryRef": "START_DATE_TIME"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_CUST_ITEM_CUM_KEYS_ALL"
+                    }
+                  },
+                  "Property": "LAST_UPDATE_DATE"
+                }
+              },
+              "queryRef": "RLM_CUST_ITEM_CUM_KEYS_ALL.LAST_UPDATE_DATE",
+              "nativeQueryRef": "LAST_UPDATE_DATE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HZ_CUST_ACCOUNTS"
+                    }
+                  },
+                  "Property": "ACCOUNT_NUMBER"
+                }
+              },
+              "queryRef": "HZ_CUST_ACCOUNTS.ACCOUNT_NUMBER",
+              "nativeQueryRef": "ACCOUNT_NUMBER"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_CUST_ITEM_CUM_KEYS_ALL"
+                    }
+                  },
+                  "Property": "CUM_QTY"
+                }
+              },
+              "queryRef": "Sum(RLM_CUST_ITEM_CUM_KEYS_ALL.CUM_QTY)",
+              "nativeQueryRef": "CUM_QTY"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HZ_CUST_ACCOUNTS"
+                    }
+                  },
+                  "Property": "CUM Eaton"
+                }
+              },
+              "queryRef": "HZ_CUST_ACCOUNTS.CUM Eaton",
+              "nativeQueryRef": "CUM Eaton"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "RLM_SCHEDULE_LINES_ALL"
+                  }
+                },
+                "Property": "START_DATE_TIME"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f1b8620e87090190824d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_LINES_ALL"
+              }
+            },
+            "Property": "CUSTOMER_ITEM_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4cf48e0b3062d3b40a1b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_LINES_ALL"
+              }
+            },
+            "Property": "HEADER_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "21dab508ee9eab40c880",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_LINES_ALL"
+              }
+            },
+            "Property": "INVENTORY_ITEM_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "63581faa82b441b645a8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_LINES_ALL"
+              }
+            },
+            "Property": "LINE_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4696f28b8ae9000ea07e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_LINES_ALL"
+              }
+            },
+            "Property": "PN Cliente"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "r",
+              "Entity": "RLM_SCHEDULE_LINES_ALL",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "r"
+                          }
+                        },
+                        "Property": "PN Cliente"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'R520224'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "3e7ecb109e014e004c8d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_LINES_ALL"
+              }
+            },
+            "Property": "QTY_TYPE_CODE"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "r",
+              "Entity": "RLM_SCHEDULE_LINES_ALL",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "r"
+                          }
+                        },
+                        "Property": "QTY_TYPE_CODE"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'CUMULATIVE'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "a0339e09551a0b1ce6d5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_LINES_ALL"
+              }
+            },
+            "Property": "PRIMARY_QUANTITY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4ee2d344018c211d064e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_LINES_ALL"
+              }
+            },
+            "Property": "START_DATE_TIME"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "528af0b620525c7d39ac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_CUST_ITEM_CUM_KEYS_ALL"
+              }
+            },
+            "Property": "LAST_UPDATE_DATE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b76d16011c101ac1c14c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "HZ_CUST_ACCOUNTS"
+              }
+            },
+            "Property": "ACCOUNT_NUMBER"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "h",
+              "Entity": "HZ_CUST_ACCOUNTS",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "h"
+                          }
+                        },
+                        "Property": "ACCOUNT_NUMBER"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'971076187'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "4005264802a87c8bb38e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "HZ_CUST_ACCOUNTS"
+              }
+            },
+            "Property": "CUM Eaton"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1da916f69aa325891028",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_CUST_ITEM_CUM_KEYS_ALL"
+              }
+            },
+            "Property": "CUM_QTY"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

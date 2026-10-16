@@ -1,0 +1,7 @@
+# Power BI Project (PBIP): arquivos locais e cache de dados
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Exportações do report contêm dados de clientes, não versionar
+exports/
+*.csv

@@ -1,0 +1,139 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 6.3462416838147222
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1474.1624720118848,
+            "y": 42.984660990786338
+          },
+          "nodeIndex": "RLM_CUST_SHIPTO_TERMS_ALL",
+          "nodeLineageTag": "fe2b02a6-29e5-4933-bf98-b03dc0fdeec1",
+          "size": {
+            "height": 300,
+            "width": 276
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 328.81866629447779,
+            "y": 6.3419991625750605
+          },
+          "nodeIndex": "RLM_SCHEDULE_LINES_ALL",
+          "nodeLineageTag": "04523855-35d5-4d49-a7b8-a3ae910a105f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 741.06798269321735,
+            "y": 6.3419991625750605
+          },
+          "nodeIndex": "RLM_SCHEDULE_HEADERS_ALL",
+          "nodeLineageTag": "1a9a9be1-adc6-4b0c-a1bc-1b913671c375",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 537.87266532174658,
+            "y": 363.42349062605575
+          },
+          "nodeIndex": "HZ_PARTIES",
+          "nodeLineageTag": "8cd1ea17-0bed-461b-b716-d7070f8c918c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1011.2947664548234,
+            "y": 363.9792834393009
+          },
+          "nodeIndex": "HZ_CUST_ACCOUNTS",
+          "nodeLineageTag": "96cda074-8b24-487e-b010-fc05d03ed385",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1.5269372895172921,
+            "y": 237.73273791577398
+          },
+          "nodeIndex": "RLM_CUST_ITEM_CUM_KEYS_ALL",
+          "nodeLineageTag": "148f2732-c07c-44ce-ae93-baf81fb27024",
+          "size": {
+            "height": 300,
+            "width": 288.96399274231692
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 76.430428796437582,
+            "y": 706.61390577932912
+          },
+          "nodeIndex": "MTL_CUSTOMER_ITEM_XREFS",
+          "nodeLineageTag": "882d54a9-be11-490b-9a04-5280bf6a7c7d",
+          "size": {
+            "height": 300,
+            "width": 279.09866071164464
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 530.95973961234415,
+            "y": 751.71256649097393
+          },
+          "nodeIndex": "MTL_SYSTEM_ITEMS_B",
+          "nodeLineageTag": "00c8c6e2-e2aa-4b7a-b048-053a16be2727",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 986.85964191276389,
+            "y": 748.27256740336509
+          },
+          "nodeIndex": "HZ_CUST_ACCT_SITES_ALL",
+          "nodeLineageTag": "f0528b89-659e-4511-a48c-3cea700633cb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 63.029430634535842,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

@@ -1,0 +1,53 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["RLM_CUST_SHIPTO_TERMS_ALL","RLM_SCHEDULE_LINES_ALL","RLM_SCHEDULE_HEADERS_ALL","HZ_PARTIES","HZ_CUST_ACCOUNTS","RLM_CUST_ITEM_CUM_KEYS_ALL","MTL_CUSTOMER_ITEM_XREFS","MTL_SYSTEM_ITEMS_B","HZ_CUST_ACCT_SITES_ALL"]
+
+annotation PBI_ProTooling = ["WebModelingEdit","DevMode"]
+
+annotation __LastRPTime = 134354349597334961
+
+ref table RLM_CUST_SHIPTO_TERMS_ALL
+ref table RLM_SCHEDULE_LINES_ALL
+ref table RLM_SCHEDULE_HEADERS_ALL
+ref table HZ_PARTIES
+ref table DateTableTemplate_8a46a197-0682-4a4e-a008-348ed47f6706
+ref table LocalDateTable_5b3a499e-9ae0-4ba3-89f2-003dab4291c2
+ref table LocalDateTable_13bb533b-6780-4981-9a7c-4ea3ec995a0f
+ref table LocalDateTable_6c2abe1e-63e0-40fc-9179-4a276d549443
+ref table LocalDateTable_b3b6d659-3137-4bc5-a348-63f39ae52631
+ref table HZ_CUST_ACCOUNTS
+ref table LocalDateTable_63a84d02-b279-4744-80be-0cf65512db80
+ref table LocalDateTable_3276d66f-9d56-4f85-843a-25904a292ba1
+ref table LocalDateTable_0d0a4ae6-3e21-40a5-87e2-941972ebc883
+ref table LocalDateTable_963b196a-ee69-46d7-b085-cc5f2a2a00e1
+ref table LocalDateTable_6df0747c-5337-4daf-b041-fb1abde520f1
+ref table LocalDateTable_9dfa9bc4-16f4-4a43-abde-7498af293afb
+ref table LocalDateTable_c912b063-01ca-4302-a668-e7e5d9e5e6a8
+ref table LocalDateTable_d51db95f-8487-43cb-9b48-79c88377bf83
+ref table LocalDateTable_c818172d-ec4c-42ac-a01a-d2d3fb9f9e9c
+ref table LocalDateTable_4cac5d21-4b6d-42f1-b0d1-e39b05b57579
+ref table LocalDateTable_9e7a600b-e6c5-4718-ad64-48a41b2039a0
+ref table RLM_CUST_ITEM_CUM_KEYS_ALL
+ref table LocalDateTable_f3e498ce-36ce-4346-8fda-57573b42aec7
+ref table LocalDateTable_67a687e5-ca9a-4db8-90de-adcc779029dd
+ref table LocalDateTable_90ed01b2-252a-4bc7-91d4-3c73f63cf0f1
+ref table LocalDateTable_038b1641-beac-4a8a-b9d8-cdbbbb1632f5
+ref table LocalDateTable_19aef377-efec-4f77-9425-39cbe97d137e
+ref table MTL_CUSTOMER_ITEM_XREFS
+ref table MTL_SYSTEM_ITEMS_B
+ref table HZ_CUST_ACCT_SITES_ALL
+ref table LocalDateTable_9c00aff7-d6f6-434b-90f7-be9757261780
+ref table LocalDateTable_bb39e36e-0b29-4860-9708-8f25ae3bc256
+ref table LocalDateTable_f7799544-3234-4931-aadf-7b4eed90d8b5
+ref table LocalDateTable_1610d409-3d8e-4070-83c8-c538db563401
+
+ref cultureInfo pt-BR
+

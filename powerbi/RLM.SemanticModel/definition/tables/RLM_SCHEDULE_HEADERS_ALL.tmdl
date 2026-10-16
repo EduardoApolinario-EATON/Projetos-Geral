@@ -1,0 +1,61 @@
+table RLM_SCHEDULE_HEADERS_ALL
+	lineageTag: 1a9a9be1-adc6-4b0c-a1bc-1b913671c375
+
+	column HEADER_ID
+		dataType: string
+		lineageTag: 8f7c11e8-5e86-4f66-9b63-73ae414ee1da
+		summarizeBy: none
+		sourceColumn: HEADER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_ID
+		dataType: string
+		lineageTag: ff35f409-7619-443b-bcb8-1d97e7fd89cc
+		summarizeBy: none
+		sourceColumn: CUSTOMER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCHEDULE_TYPE
+		dataType: string
+		lineageTag: 067eea5d-6d99-4b69-8819-e944d831d807
+		summarizeBy: none
+		sourceColumn: SCHEDULE_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TP Location'
+		dataType: string
+		lineageTag: bb4a24c0-4099-43fa-8018-45c181a63fce
+		summarizeBy: none
+		sourceColumn: TP Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORG_ID
+		dataType: string
+		lineageTag: be9b899f-93b8-4823-ab83-20b452d98aec
+		summarizeBy: none
+		sourceColumn: ORG_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RLM_SCHEDULE_HEADERS_ALL = m
+		mode: import
+		source =
+				let
+				    Fonte = PowerPlatform.Dataflows(null),
+				    Workspaces = Fonte{[Id="Workspaces"]}[Data],
+				    #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f" = Workspaces{[workspaceId="5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"]}[Data],
+				    #"8f3b264a-f27d-44a1-8c80-7adc99436f32" = #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"{[dataflowId="2b1ed9ee-fcdf-4bc5-aac7-e931b35b994b"]}[Data],
+				    RLM_SCHEDULE_HEADERS_ALL_ = #"8f3b264a-f27d-44a1-8c80-7adc99436f32"{[entity="RLM_SCHEDULE_HEADERS_ALL",version=""]}[Data],
+				    #"Outras Colunas Removidas" = Table.SelectColumns(RLM_SCHEDULE_HEADERS_ALL_,{"HEADER_ID", "CUSTOMER_ID", "SCHEDULE_TYPE", "ECE_TP_LOCATION_CODE_EXT", "ORG_ID"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Outras Colunas Removidas",{{"ECE_TP_LOCATION_CODE_EXT", "TP Location"}})
+				in
+				    #"Colunas Renomeadas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

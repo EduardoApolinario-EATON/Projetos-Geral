@@ -1,0 +1,592 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "9ec78ac454ff47bc234e",
+  "position": {
+    "x": 0,
+    "y": 87.272727272727266,
+    "z": 3000,
+    "height": 632.72727272727263,
+    "width": 1280,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HZ_PARTIES"
+                    }
+                  },
+                  "Property": "Cliente"
+                }
+              },
+              "queryRef": "HZ_PARTIES.Cliente",
+              "nativeQueryRef": "Cliente"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HZ_CUST_ACCOUNTS"
+                    }
+                  },
+                  "Property": "ACCOUNT_NUMBER"
+                }
+              },
+              "queryRef": "HZ_CUST_ACCOUNTS.ACCOUNT_NUMBER",
+              "nativeQueryRef": "ACCOUNT_NUMBER"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HZ_CUST_ACCOUNTS"
+                    }
+                  },
+                  "Property": "CUM Cliente"
+                }
+              },
+              "queryRef": "HZ_CUST_ACCOUNTS.CUM Cliente",
+              "nativeQueryRef": "CUM Cliente"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_SCHEDULE_LINES_ALL"
+                    }
+                  },
+                  "Property": "PN Cliente"
+                }
+              },
+              "queryRef": "RLM_SCHEDULE_LINES_ALL.PN Cliente",
+              "nativeQueryRef": "PN Cliente"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HZ_CUST_ACCOUNTS"
+                    }
+                  },
+                  "Property": "CUM Eaton"
+                }
+              },
+              "queryRef": "HZ_CUST_ACCOUNTS.CUM Eaton",
+              "nativeQueryRef": "CUM Eaton"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MTL_SYSTEM_ITEMS_B"
+                    }
+                  },
+                  "Property": "PN Eaton"
+                }
+              },
+              "queryRef": "MTL_SYSTEM_ITEMS_B.PN Eaton",
+              "nativeQueryRef": "PN Eaton"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_SCHEDULE_HEADERS_ALL"
+                    }
+                  },
+                  "Property": "TP Location"
+                }
+              },
+              "queryRef": "RLM_SCHEDULE_HEADERS_ALL.TP Location",
+              "nativeQueryRef": "TP Location"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RLM_CUST_ITEM_CUM_KEYS_ALL"
+                    }
+                  },
+                  "Property": "LAST_UPDATE_DATE"
+                }
+              },
+              "queryRef": "RLM_CUST_ITEM_CUM_KEYS_ALL.LAST_UPDATE_DATE",
+              "nativeQueryRef": "LAST_UPDATE_DATE"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "RLM_SCHEDULE_HEADERS_ALL"
+                  }
+                },
+                "Property": "TP Location"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "191.9282109806235D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "RLM_SCHEDULE_HEADERS_ALL.TP Location"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "117.96801322399931D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "HZ_CUST_ACCOUNTS.CUM Eaton"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "140.95930538221177D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "RLM_SCHEDULE_LINES_ALL.PN Cliente"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "170.967993754879D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "HZ_CUST_ACCOUNTS.ACCOUNT_NUMBER"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "HZ_PARTIES.Cliente"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "HZ_CUST_ACCOUNTS.CUM Eaton"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "RLM_SCHEDULE_LINES_ALL.PN Cliente"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "HZ_CUST_ACCOUNTS.ACCOUNT_NUMBER"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "RLM_SCHEDULE_HEADERS_ALL.TP Location"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fd556bf88eb40419c267",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "HZ_CUST_ACCOUNTS"
+              }
+            },
+            "Property": "CUM Eaton"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "h",
+              "Entity": "HZ_CUST_ACCOUNTS",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "h"
+                            }
+                          },
+                          "Property": "CUM Eaton"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "e2d1394eac044314251e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "HZ_PARTIES"
+              }
+            },
+            "Property": "Cliente"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "98ccf564da0260510477",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "HZ_CUST_ACCOUNTS"
+              }
+            },
+            "Property": "ACCOUNT_NUMBER"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "20df80b5767d0d2c5c73",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_LINES_ALL"
+              }
+            },
+            "Property": "PN Cliente"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "563c1d2985001c68e1e2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_HEADERS_ALL"
+              }
+            },
+            "Property": "TP Location"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7c5163682815440e315a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_CUST_ITEM_CUM_KEYS_ALL"
+              }
+            },
+            "Property": "LAST_UPDATE_DATE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7cc69605b62ee4674d02",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MTL_SYSTEM_ITEMS_B"
+              }
+            },
+            "Property": "PN Eaton"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b42f1502ba78729e2d1e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "HZ_CUST_ACCOUNTS"
+              }
+            },
+            "Property": "CUM Cliente"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

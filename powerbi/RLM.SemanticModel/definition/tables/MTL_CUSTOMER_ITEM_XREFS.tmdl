@@ -1,0 +1,37 @@
+table MTL_CUSTOMER_ITEM_XREFS
+	lineageTag: 882d54a9-be11-490b-9a04-5280bf6a7c7d
+
+	column CUSTOMER_ITEM_ID
+		dataType: string
+		lineageTag: 0c830577-6656-4360-9ada-4488ce75331c
+		summarizeBy: none
+		sourceColumn: CUSTOMER_ITEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVENTORY_ITEM_ID
+		dataType: string
+		lineageTag: 3368fccb-c6dc-47ed-bd45-51ef903305a6
+		summarizeBy: none
+		sourceColumn: INVENTORY_ITEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MTL_CUSTOMER_ITEM_XREFS = m
+		mode: import
+		source =
+				let
+				    Fonte = PowerPlatform.Dataflows(null),
+				    Workspaces = Fonte{[Id="Workspaces"]}[Data],
+				    #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f" = Workspaces{[workspaceId="5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"]}[Data],
+				    #"d5ac1774-0d57-415d-9484-12c51cb29565" = #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"{[dataflowId="265ceb0f-23c3-4cda-8e48-3c9aafd1e04c"]}[Data],
+				    MTL_CUSTOMER_ITEM_XREFS_ = #"d5ac1774-0d57-415d-9484-12c51cb29565"{[entity="MTL_CUSTOMER_ITEM_XREFS",version=""]}[Data],
+				    #"Outras Colunas Removidas" = Table.SelectColumns(MTL_CUSTOMER_ITEM_XREFS_,{"CUSTOMER_ITEM_ID", "INVENTORY_ITEM_ID"}),
+				  #"Removed duplicates" = Table.Distinct(#"Outras Colunas Removidas", {"CUSTOMER_ITEM_ID"})
+				in
+				    #"Removed duplicates"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

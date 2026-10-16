@@ -1,0 +1,367 @@
+table RLM_CUST_ITEM_CUM_KEYS_ALL
+	lineageTag: 148f2732-c07c-44ce-ae93-baf81fb27024
+
+	column CUM_KEY_ID
+		dataType: string
+		lineageTag: daf1e7fa-7b5a-4642-8fb0-f09851d8fd9f
+		summarizeBy: none
+		sourceColumn: CUM_KEY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_ITEM_ID
+		dataType: string
+		lineageTag: 78012cbc-0a9a-48ff-bdb4-425bcbaa7227
+		summarizeBy: none
+		sourceColumn: CUSTOMER_ITEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIP_TO_ADDRESS_ID
+		dataType: string
+		lineageTag: a4fa307f-485e-4be4-a389-68cc5cd9e2df
+		summarizeBy: none
+		sourceColumn: SHIP_TO_ADDRESS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BILL_TO_ADDRESS_ID
+		dataType: string
+		lineageTag: fa2f225e-034f-4c78-8423-14697edb9425
+		summarizeBy: none
+		sourceColumn: BILL_TO_ADDRESS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column INTRMD_SHIP_TO_ID
+		dataType: string
+		lineageTag: a70c3ea5-8f2e-482d-844e-bf2c30e3663c
+		summarizeBy: none
+		sourceColumn: INTRMD_SHIP_TO_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIP_FROM_ORG_ID
+		dataType: string
+		lineageTag: 8f89aad7-4f79-4a22-8a34-e8142b52e081
+		summarizeBy: none
+		sourceColumn: SHIP_FROM_ORG_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUM_START_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0b496cc9-7f2a-419d-b413-05d5585a7048
+		summarizeBy: none
+		sourceColumn: CUM_START_DATE
+
+		variation Variation
+			isDefault
+			relationship: 5555d3bb-3ec6-4f03-8566-f7bc71b4e1cc
+			defaultHierarchy: LocalDateTable_f3e498ce-36ce-4346-8fda-57573b42aec7.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUST_RECORD_YEAR
+		dataType: string
+		lineageTag: d789ef21-d432-4c03-86cd-5e4e5a6ecb77
+		summarizeBy: none
+		sourceColumn: CUST_RECORD_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORG_ID
+		dataType: string
+		lineageTag: dec6f577-27ee-46d8-a852-e46c212dedeb
+		summarizeBy: none
+		sourceColumn: ORG_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PURCHASE_ORDER_NUMBER
+		dataType: string
+		lineageTag: b61853fe-0438-47c7-8dfa-f0740a58fb63
+		summarizeBy: none
+		sourceColumn: PURCHASE_ORDER_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUST_UOM_CODE
+		dataType: string
+		lineageTag: 4037b609-6959-417d-8609-25d69e59ba00
+		summarizeBy: none
+		sourceColumn: CUST_UOM_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUM_QTY
+		dataType: double
+		lineageTag: 73595683-789f-43ba-b7c2-a39af7a8ef22
+		summarizeBy: sum
+		sourceColumn: CUM_QTY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUM_QTY_AFTER_CUTOFF
+		dataType: double
+		lineageTag: 9ea7add4-8faa-4d38-a1e3-dd6dc2117a2f
+		summarizeBy: sum
+		sourceColumn: CUM_QTY_AFTER_CUTOFF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUM_QTY_TO_BE_ACCUMULATED
+		dataType: double
+		lineageTag: 30c25e70-2dde-4b02-b9ed-9ee7d01a779b
+		summarizeBy: sum
+		sourceColumn: CUM_QTY_TO_BE_ACCUMULATED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LAST_CUM_QTY_UPDATE_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 49cd6a0c-e66b-4af6-98f5-60c442d51be5
+		summarizeBy: none
+		sourceColumn: LAST_CUM_QTY_UPDATE_DATE
+
+		variation Variation
+			isDefault
+			relationship: d7f9224d-13db-4fec-8a31-89dbdf97860d
+			defaultHierarchy: LocalDateTable_67a687e5-ca9a-4db8-90de-adcc779029dd.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_UPDATE_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a5d82888-7144-4673-a207-417854193410
+		summarizeBy: none
+		sourceColumn: LAST_UPDATE_DATE
+
+		variation Variation
+			isDefault
+			relationship: eab7f328-7453-41cb-a84e-2048d298d0d2
+			defaultHierarchy: LocalDateTable_90ed01b2-252a-4bc7-91d4-3c73f63cf0f1.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_UPDATED_BY
+		dataType: string
+		lineageTag: 77b1b978-b6e5-4c68-a29f-d88e389d4275
+		summarizeBy: none
+		sourceColumn: LAST_UPDATED_BY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATION_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4b196fcb-045f-406f-bc91-d53b3bcb8792
+		summarizeBy: none
+		sourceColumn: CREATION_DATE
+
+		variation Variation
+			isDefault
+			relationship: 6e20ab52-1344-4d3c-9469-4825d527e2e1
+			defaultHierarchy: LocalDateTable_038b1641-beac-4a8a-b9d8-cdbbbb1632f5.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATED_BY
+		dataType: string
+		lineageTag: 348d6049-1f0e-4e68-b2ec-8707c7fcef45
+		summarizeBy: none
+		sourceColumn: CREATED_BY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_UPDATE_LOGIN
+		dataType: string
+		lineageTag: a4bd8287-654a-41b2-b471-66a9f20ee766
+		summarizeBy: none
+		sourceColumn: LAST_UPDATE_LOGIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROGRAM_UPDATE_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f6d04bfd-cbad-4d74-aa04-4ff138a10cd6
+		summarizeBy: none
+		sourceColumn: PROGRAM_UPDATE_DATE
+
+		variation Variation
+			isDefault
+			relationship: 62e9f9fb-4152-404a-ac54-05089f5dc69b
+			defaultHierarchy: LocalDateTable_19aef377-efec-4f77-9425-39cbe97d137e.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE1
+		dataType: string
+		lineageTag: 8f120195-0e48-457e-a624-e184376ed65f
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE1
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE2
+		dataType: string
+		lineageTag: 0a80dde3-9592-471a-b399-defee7401cc5
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE2
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE3
+		dataType: string
+		lineageTag: cb0afdef-cffd-49fe-9499-f1e38e47f83a
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE3
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE4
+		dataType: string
+		lineageTag: c53d40e0-6627-4d98-a0c0-48d629a0f753
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE4
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE5
+		dataType: string
+		lineageTag: 6c3b31f7-97a6-4e76-b2b0-f48ccc83cd2d
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE5
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE6
+		dataType: string
+		lineageTag: 0b37c524-01f8-442d-bbfe-9388472128ba
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE6
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE7
+		dataType: string
+		lineageTag: 30c4db5d-27a1-4d62-a918-ad4f37eac53a
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE7
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE8
+		dataType: string
+		lineageTag: 28cd7903-0dd1-4cbd-8006-72671d6a8ad6
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE8
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE9
+		dataType: string
+		lineageTag: f226ce7e-0993-44b8-b014-f7233dcae357
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE9
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE10
+		dataType: string
+		lineageTag: 501f5a9b-2e2c-41ba-bcfe-8eb74321b936
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE10
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE11
+		dataType: string
+		lineageTag: cc9c6495-9ce1-4007-9ae4-6b8526cea266
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE11
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE12
+		dataType: string
+		lineageTag: d76cec06-76b1-4316-986c-7f2b51aef61f
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE12
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE13
+		dataType: string
+		lineageTag: b7e42fbb-4aa0-4ad4-ac68-c00d68a9c172
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE13
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE14
+		dataType: string
+		lineageTag: 8678899b-7802-48e9-96a3-2d523588f7a5
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE14
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE15
+		dataType: string
+		lineageTag: 0016804f-4ad1-4c45-8985-4d22421191a7
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE15
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_ATTRIBUTE_CATEGORY
+		dataType: string
+		lineageTag: a505a2dd-e01f-43da-a49f-4d5e7c714051
+		summarizeBy: none
+		sourceColumn: TP_ATTRIBUTE_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column INACTIVE_FLAG
+		dataType: string
+		lineageTag: d45bb11b-d789-43b3-8cda-371df5b3d7ee
+		summarizeBy: none
+		sourceColumn: INACTIVE_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUM_NOTE_TEXT
+		dataType: string
+		lineageTag: e59b8a14-02a4-4746-9daf-209ebf450da8
+		summarizeBy: none
+		sourceColumn: CUM_NOTE_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RLM_CUST_ITEM_CUM_KEYS_ALL = m
+		mode: import
+		source =
+				let
+				    Fonte = PowerPlatform.Dataflows(null),
+				    Workspaces = Fonte{[Id="Workspaces"]}[Data],
+				    #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f" = Workspaces{[workspaceId="5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"]}[Data],
+				    #"e07c3370-2419-4234-9c49-6a74e3d1e850" = #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"{[dataflowId="e07c3370-2419-4234-9c49-6a74e3d1e850"]}[Data],
+				    RLM_CUST_ITEM_CUM_KEYS_ALL_ = #"e07c3370-2419-4234-9c49-6a74e3d1e850"{[entity="RLM_CUST_ITEM_CUM_KEYS_ALL",version=""]}[Data]
+				in
+				    RLM_CUST_ITEM_CUM_KEYS_ALL_
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

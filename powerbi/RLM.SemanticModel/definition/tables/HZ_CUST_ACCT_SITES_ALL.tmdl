@@ -1,0 +1,327 @@
+table HZ_CUST_ACCT_SITES_ALL
+	lineageTag: f0528b89-659e-4511-a48c-3cea700633cb
+
+	column CUST_ACCT_SITE_ID
+		dataType: string
+		lineageTag: 53692bf2-d6f1-4028-92fd-ecfe13fd724b
+		summarizeBy: none
+		sourceColumn: CUST_ACCT_SITE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUST_ACCOUNT_ID
+		dataType: string
+		lineageTag: d25908a0-8d40-44e4-a30e-93494d5f9e85
+		summarizeBy: none
+		sourceColumn: CUST_ACCOUNT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARTY_SITE_ID
+		dataType: string
+		lineageTag: 7989aadd-14a3-4d1b-96c6-dc4e7e0d037e
+		summarizeBy: none
+		sourceColumn: PARTY_SITE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_UPDATE_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 81ffa918-cdc6-4fbc-9010-9edf98426e80
+		summarizeBy: none
+		sourceColumn: LAST_UPDATE_DATE
+
+		variation Variation
+			isDefault
+			relationship: 9bf13cdd-2bb2-41bd-8d38-18a28628f0f8
+			defaultHierarchy: LocalDateTable_9c00aff7-d6f6-434b-90f7-be9757261780.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_UPDATED_BY
+		dataType: string
+		lineageTag: 5b897429-9d48-4980-9564-7d2a5e8b252e
+		summarizeBy: none
+		sourceColumn: LAST_UPDATED_BY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATION_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: db57af49-3abe-46bc-a092-0c3fb799f2f8
+		summarizeBy: none
+		sourceColumn: CREATION_DATE
+
+		variation Variation
+			isDefault
+			relationship: f1eeca9a-7170-41c3-9f32-1c3f7a88f53d
+			defaultHierarchy: LocalDateTable_bb39e36e-0b29-4860-9708-8f25ae3bc256.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATED_BY
+		dataType: string
+		lineageTag: 273c8044-22b8-4277-8c4f-fdd12e3c8ae2
+		summarizeBy: none
+		sourceColumn: CREATED_BY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_UPDATE_LOGIN
+		dataType: string
+		lineageTag: 559d69bd-1e75-4c27-ac95-2dd9593c56ab
+		summarizeBy: none
+		sourceColumn: LAST_UPDATE_LOGIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROGRAM_UPDATE_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 17fc83f2-7895-4120-afb7-f642b6442352
+		summarizeBy: none
+		sourceColumn: PROGRAM_UPDATE_DATE
+
+		variation Variation
+			isDefault
+			relationship: 4fab3148-c403-4a34-9f6f-4238e8cffb81
+			defaultHierarchy: LocalDateTable_f7799544-3234-4931-aadf-7b4eed90d8b5.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORIG_SYSTEM_REFERENCE
+		dataType: string
+		lineageTag: 46faad71-35a6-4bb7-8fdd-bb2950d0f204
+		summarizeBy: none
+		sourceColumn: ORIG_SYSTEM_REFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		dataType: string
+		lineageTag: 3ee5dc74-7c74-4510-990a-b9d4cf51b767
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORG_ID
+		dataType: string
+		lineageTag: 7ef4e3cd-d1e7-4812-8639-2a9c82b94e06
+		summarizeBy: none
+		sourceColumn: ORG_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BILL_TO_FLAG
+		dataType: string
+		lineageTag: 2fd7c669-bb6d-4b09-9518-d4359c1ea84f
+		summarizeBy: none
+		sourceColumn: BILL_TO_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_FLAG
+		dataType: string
+		lineageTag: 793b97a5-781c-4405-b6b8-bda90701b55a
+		summarizeBy: none
+		sourceColumn: MARKET_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIP_TO_FLAG
+		dataType: string
+		lineageTag: b4095b37-a8a5-48c2-8198-9156bc6a6df0
+		summarizeBy: none
+		sourceColumn: SHIP_TO_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_CATEGORY_CODE
+		dataType: string
+		lineageTag: 6b96dc24-bb69-42a6-bbb2-3d01af403005
+		summarizeBy: none
+		sourceColumn: CUSTOMER_CATEGORY_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column LANGUAGE
+		dataType: string
+		lineageTag: f6d01826-cd04-4efc-8175-02dbb022f40d
+		summarizeBy: none
+		sourceColumn: LANGUAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY_ACCOUNT_FLAG
+		dataType: string
+		lineageTag: 09417b0b-cdee-484f-8b7b-69ece0652602
+		summarizeBy: none
+		sourceColumn: KEY_ACCOUNT_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column TP_HEADER_ID
+		dataType: string
+		lineageTag: 72a29d51-d3ba-4087-b53a-88e34fa12867
+		summarizeBy: none
+		sourceColumn: TP_HEADER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ECE_TP_LOCATION_CODE
+		dataType: string
+		lineageTag: 380be4a9-297c-4968-b1b7-ab80d185bad2
+		summarizeBy: none
+		sourceColumn: ECE_TP_LOCATION_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SERVICE_TERRITORY_ID
+		dataType: string
+		lineageTag: 717b6b64-4548-4f50-b450-6be6e1bacb6c
+		summarizeBy: none
+		sourceColumn: SERVICE_TERRITORY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRIMARY_SPECIALIST_ID
+		dataType: string
+		lineageTag: eb96d05b-88ca-4cc4-9e73-15d241aaa1a8
+		summarizeBy: none
+		sourceColumn: PRIMARY_SPECIALIST_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECONDARY_SPECIALIST_ID
+		dataType: string
+		lineageTag: 78106089-ac60-406a-bcf2-c226ab7026b5
+		summarizeBy: none
+		sourceColumn: SECONDARY_SPECIALIST_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TERRITORY_ID
+		dataType: string
+		lineageTag: a5b68397-fe32-47f4-bece-ca137cc29723
+		summarizeBy: none
+		sourceColumn: TERRITORY_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ADDRESS_TEXT
+		dataType: string
+		lineageTag: 1ead3f80-2333-4998-a429-de50d6a24c49
+		summarizeBy: none
+		sourceColumn: ADDRESS_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TERRITORY
+		dataType: string
+		lineageTag: 537cb361-c357-4e12-b231-3444384a63be
+		summarizeBy: none
+		sourceColumn: TERRITORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSLATED_CUSTOMER_NAME
+		dataType: string
+		lineageTag: 5eccfba3-d83b-435b-96af-40a56ac7f714
+		summarizeBy: none
+		sourceColumn: TRANSLATED_CUSTOMER_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBJECT_VERSION_NUMBER
+		dataType: double
+		lineageTag: 2252d8fb-2e43-4c23-ad88-ce31ceebd660
+		summarizeBy: sum
+		sourceColumn: OBJECT_VERSION_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREATED_BY_MODULE
+		dataType: string
+		lineageTag: 383a07f9-0335-44ae-b13e-b8c51543b344
+		summarizeBy: none
+		sourceColumn: CREATED_BY_MODULE
+
+		annotation SummarizationSetBy = Automatic
+
+	column APPLICATION_ID
+		dataType: string
+		lineageTag: 1a3af2f4-6945-45c1-b90f-859d94808e0c
+		summarizeBy: none
+		sourceColumn: APPLICATION_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ATTRIBUTE1
+		dataType: string
+		lineageTag: 0e56fc13-cebf-47bf-95c0-8fae4409fb3c
+		summarizeBy: none
+		sourceColumn: ATTRIBUTE1
+
+		annotation SummarizationSetBy = Automatic
+
+	column ATTRIBUTE3
+		dataType: string
+		lineageTag: c805c602-4b47-49bb-b43f-7aa786c6df8b
+		summarizeBy: none
+		sourceColumn: ATTRIBUTE3
+
+		annotation SummarizationSetBy = Automatic
+
+	column ATTRIBUTE19
+		dataType: string
+		lineageTag: 05df7076-12be-4898-afb2-bd390e2407fd
+		summarizeBy: none
+		sourceColumn: ATTRIBUTE19
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLOBAL_ATTRIBUTE3
+		dataType: string
+		lineageTag: 5311349e-7705-4c6d-9b04-d3076b5fcb67
+		summarizeBy: none
+		sourceColumn: GLOBAL_ATTRIBUTE3
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLOBAL_ATTRIBUTE4
+		dataType: string
+		lineageTag: 8d45684b-df00-415d-b35a-e77e70fa6269
+		summarizeBy: none
+		sourceColumn: GLOBAL_ATTRIBUTE4
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLOBAL_ATTRIBUTE5
+		dataType: string
+		lineageTag: 7d02de2d-341d-4c99-9b75-a148237846d3
+		summarizeBy: none
+		sourceColumn: GLOBAL_ATTRIBUTE5
+
+		annotation SummarizationSetBy = Automatic
+
+	partition HZ_CUST_ACCT_SITES_ALL = m
+		mode: import
+		source =
+				let
+				    Fonte = PowerPlatform.Dataflows(null),
+				    Workspaces = Fonte{[Id="Workspaces"]}[Data],
+				    #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f" = Workspaces{[workspaceId="5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"]}[Data],
+				    #"8592e41f-8d88-4721-8374-660ec5f9776f" = #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"{[dataflowId="8592e41f-8d88-4721-8374-660ec5f9776f"]}[Data],
+				    HZ_CUST_ACCT_SITES_ALL_ = #"8592e41f-8d88-4721-8374-660ec5f9776f"{[entity="HZ_CUST_ACCT_SITES_ALL",version=""]}[Data]
+				in
+				    HZ_CUST_ACCT_SITES_ALL_
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

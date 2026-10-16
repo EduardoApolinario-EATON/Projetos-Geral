@@ -1,0 +1,202 @@
+table MTL_SYSTEM_ITEMS_B
+	lineageTag: 00c8c6e2-e2aa-4b7a-b048-053a16be2727
+
+	column INVENTORY_ITEM_ID
+		dataType: string
+		lineageTag: a12dc69e-d087-4cf1-88fd-fc5a159bcf2b
+		summarizeBy: none
+		sourceColumn: INVENTORY_ITEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANNING_MAKE_BUY_CODE
+		dataType: double
+		lineageTag: 76987ded-78c9-436a-9b14-af561223dd37
+		summarizeBy: none
+		sourceColumn: PLANNING_MAKE_BUY_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STOCK_ENABLED_FLAG
+		dataType: string
+		lineageTag: 6bbd63e8-3486-447a-800a-6479fbfb9398
+		summarizeBy: none
+		sourceColumn: STOCK_ENABLED_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column PURCHASING_ENABLED_FLAG
+		dataType: string
+		lineageTag: 8ed5173b-5005-49ce-9429-a92c9cf3a0d9
+		summarizeBy: none
+		sourceColumn: PURCHASING_ENABLED_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVENTORY_ITEM_FLAG
+		dataType: string
+		lineageTag: b54c722b-8aaf-43c7-b454-2cbfcc58b49b
+		summarizeBy: none
+		sourceColumn: INVENTORY_ITEM_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column MTL_TRANSACTIONS_ENABLED_FLAG
+		dataType: string
+		lineageTag: d5e62aa2-9f24-438b-a1a7-a75828da9464
+		summarizeBy: none
+		sourceColumn: MTL_TRANSACTIONS_ENABLED_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column SO_TRANSACTIONS_FLAG
+		dataType: string
+		lineageTag: 2c1c3a2d-9caf-4a0e-aca9-e5b860371183
+		summarizeBy: none
+		sourceColumn: SO_TRANSACTIONS_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_ORDER_ENABLED_FLAG
+		dataType: string
+		lineageTag: a9a7c896-9b95-4ec1-b7c4-d223e625439b
+		summarizeBy: none
+		sourceColumn: CUSTOMER_ORDER_ENABLED_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column INTERNAL_ORDER_ENABLED_FLAG
+		dataType: string
+		lineageTag: 4cd08787-a742-4ed5-853c-7cc726a06c9f
+		summarizeBy: none
+		sourceColumn: INTERNAL_ORDER_ENABLED_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column RETURNABLE_FLAG
+		dataType: string
+		lineageTag: b1e94ab7-43ac-4ac8-951b-c89f09081be9
+		summarizeBy: none
+		sourceColumn: RETURNABLE_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column PURCHASING_ITEM_FLAG
+		dataType: string
+		lineageTag: 1c25881d-b943-497a-8d13-0287ef41ac06
+		summarizeBy: none
+		sourceColumn: PURCHASING_ITEM_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIPPABLE_ITEM_FLAG
+		dataType: string
+		lineageTag: cb12f7a9-b07d-4bcc-a5b3-d6a0eea605aa
+		summarizeBy: none
+		sourceColumn: SHIPPABLE_ITEM_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column SERIAL_NUMBER_CONTROL_CODE
+		dataType: double
+		lineageTag: 82c0b669-9c5d-4eac-8a9f-af6e66669928
+		summarizeBy: none
+		sourceColumn: SERIAL_NUMBER_CONTROL_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LOT_CONTROL_CODE
+		dataType: double
+		lineageTag: b9319aab-6489-43f2-88bd-d7ce952b9e57
+		summarizeBy: none
+		sourceColumn: LOT_CONTROL_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REVISION_QTY_CONTROL_CODE
+		dataType: double
+		lineageTag: b1db2ecd-3cc3-49d6-aa05-e65718a69464
+		summarizeBy: none
+		sourceColumn: REVISION_QTY_CONTROL_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WEIGHT_UOM_CODE
+		dataType: string
+		lineageTag: 5f3e8975-91ca-4594-ab9e-f2f4c8689f76
+		summarizeBy: none
+		sourceColumn: WEIGHT_UOM_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIT_WEIGHT
+		dataType: double
+		lineageTag: ea648580-7d87-4e20-9c94-d381cae9e522
+		summarizeBy: none
+		sourceColumn: UNIT_WEIGHT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOLUME_UOM_CODE
+		dataType: string
+		lineageTag: 6a7a5929-e3cf-4a91-a001-931aa44bace5
+		summarizeBy: none
+		sourceColumn: VOLUME_UOM_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIT_VOLUME
+		dataType: double
+		lineageTag: e22130e4-5202-4381-8efa-28dfbc1465d4
+		summarizeBy: none
+		sourceColumn: UNIT_VOLUME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SECONDARY_UOM_CODE
+		dataType: string
+		lineageTag: 57fb8f97-0315-4fc2-9651-9786d787db93
+		summarizeBy: none
+		sourceColumn: SECONDARY_UOM_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PN Eaton'
+		dataType: string
+		lineageTag: 9e462a67-fc69-4c75-a716-8696060fac13
+		summarizeBy: none
+		sourceColumn: PN Eaton
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MTL_SYSTEM_ITEMS_B = m
+		mode: import
+		source =
+				let
+				    Fonte = PowerPlatform.Dataflows(null),
+				    Workspaces = Fonte{[Id="Workspaces"]}[Data],
+				    #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f" = Workspaces{[workspaceId="5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"]}[Data],
+				    #"d5ac1774-0d57-415d-9484-12c51cb29565" = #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"{[dataflowId="265ceb0f-23c3-4cda-8e48-3c9aafd1e04c"]}[Data],
+				    MTL_SYSTEM_ITEMS_B_ = #"d5ac1774-0d57-415d-9484-12c51cb29565"{[entity="MTL_SYSTEM_ITEMS_B",version=""]}[Data],
+				    #"Outras Colunas Removidas" = Table.SelectColumns(MTL_SYSTEM_ITEMS_B_,{"INVENTORY_ITEM_ID", "SEGMENT1", "PLANNING_MAKE_BUY_CODE", "STOCK_ENABLED_FLAG", "PURCHASING_ENABLED_FLAG", "INVENTORY_ITEM_FLAG", "MTL_TRANSACTIONS_ENABLED_FLAG", "SO_TRANSACTIONS_FLAG", "CUSTOMER_ORDER_ENABLED_FLAG", "INTERNAL_ORDER_ENABLED_FLAG", "RETURNABLE_FLAG", "PURCHASING_ITEM_FLAG", "SHIPPABLE_ITEM_FLAG", "SERIAL_NUMBER_CONTROL_CODE", "LOT_CONTROL_CODE", "REVISION_QTY_CONTROL_CODE", "WEIGHT_UOM_CODE", "UNIT_WEIGHT", "VOLUME_UOM_CODE", "UNIT_VOLUME", "SECONDARY_UOM_CODE"}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas", {"INVENTORY_ITEM_ID"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Duplicatas Removidas",{{"SEGMENT1", "PN Eaton"}})
+				in
+				    #"Colunas Renomeadas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

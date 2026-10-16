@@ -1,0 +1,5 @@
+-- Tabela: HZ_CUST_ACCOUNTS
+-- Usar SOMENTE como filtro do visual (Exibir Linha = 1). Não colocar como coluna.
+-- Não retorna 0 de propósito: com 0 o visual tenta montar todas as combinações e trava.
+Exibir Linha =
+IF ( NOT ISBLANK ( [CUM Eaton] ) || NOT ISBLANK ( [CUM Cliente] ), 1 )

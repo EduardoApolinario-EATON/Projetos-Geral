@@ -1,0 +1,93 @@
+table RLM_SCHEDULE_LINES_ALL
+	lineageTag: 04523855-35d5-4d49-a7b8-a3ae910a105f
+
+	column LINE_ID
+		dataType: string
+		lineageTag: 4e342f39-d41a-4bae-9d36-769b61be2ff6
+		summarizeBy: none
+		sourceColumn: LINE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PN Cliente'
+		dataType: string
+		lineageTag: be693a51-cfea-4d64-a71b-4a6029a23371
+		summarizeBy: none
+		sourceColumn: PN Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_ITEM_ID
+		dataType: string
+		lineageTag: d5fb6bc3-0d9b-49c4-8b2a-34b1607d33e6
+		summarizeBy: none
+		sourceColumn: CUSTOMER_ITEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVENTORY_ITEM_ID
+		dataType: string
+		lineageTag: 497c863c-1019-4d74-95ac-e66022f7a920
+		summarizeBy: none
+		sourceColumn: INVENTORY_ITEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTY_TYPE_CODE
+		dataType: string
+		lineageTag: 5dcd3f1b-f547-48b8-8248-36db188c1f4e
+		summarizeBy: none
+		sourceColumn: QTY_TYPE_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column HEADER_ID
+		dataType: string
+		lineageTag: fb0948b4-90f6-4199-812f-637b32a059f3
+		summarizeBy: none
+		sourceColumn: HEADER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRIMARY_QUANTITY
+		dataType: double
+		lineageTag: 99e6d86d-edf4-49cb-8226-1aeaae8b9bb7
+		summarizeBy: sum
+		sourceColumn: PRIMARY_QUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column START_DATE_TIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 24155806-ad54-4f23-8c43-cfaa3b2f9950
+		summarizeBy: none
+		sourceColumn: START_DATE_TIME
+
+		variation Variation
+			isDefault
+			relationship: 5ccd21dc-4aff-4b52-a6cc-701fcf8d4878
+			defaultHierarchy: LocalDateTable_1610d409-3d8e-4070-83c8-c538db563401.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RLM_SCHEDULE_LINES_ALL = m
+		mode: import
+		source =
+				let
+				    Fonte = PowerPlatform.Dataflows(null),
+				    Workspaces = Fonte{[Id="Workspaces"]}[Data],
+				    #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f" = Workspaces{[workspaceId="5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"]}[Data],
+				    #"2b1ed9ee-fcdf-4bc5-aac7-e931b35b994b" = #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"{[dataflowId="2b1ed9ee-fcdf-4bc5-aac7-e931b35b994b"]}[Data],
+				    RLM_SCHEDULE_LINES_ALL_ = #"2b1ed9ee-fcdf-4bc5-aac7-e931b35b994b"{[entity="RLM_SCHEDULE_LINES_ALL",version=""]}[Data],
+				    #"Outras Colunas Removidas" = Table.SelectColumns(RLM_SCHEDULE_LINES_ALL_,{"LINE_ID", "CUSTOMER_ITEM_EXT", "CUSTOMER_ITEM_ID", "INVENTORY_ITEM_ID", "QTY_TYPE_CODE", "HEADER_ID", "PRIMARY_QUANTITY", "START_DATE_TIME"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Outras Colunas Removidas",{{"CUSTOMER_ITEM_EXT", "PN Cliente"}})
+				in
+				    #"Colunas Renomeadas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

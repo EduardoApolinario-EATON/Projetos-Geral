@@ -1,0 +1,8 @@
+-- Tabela: HZ_CUST_ACCOUNTS
+-- Acumulado EMBARCADO pela Eaton (CUM key do Oracle = "Active Qty" no CUM Key Details).
+-- Ship To e PO vêm do contexto do visual (TP Location / Ship To filtram as CUM keys pelo relacionamento com os sites).
+CUM Eaton =
+CALCULATE (
+    MAX ( RLM_CUST_ITEM_CUM_KEYS_ALL[CUM_QTY] ),
+    TREATAS ( VALUES ( RLM_SCHEDULE_LINES_ALL[CUSTOMER_ITEM_ID] ), RLM_CUST_ITEM_CUM_KEYS_ALL[CUSTOMER_ITEM_ID] )
+)

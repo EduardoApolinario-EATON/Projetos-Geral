@@ -1,0 +1,27 @@
+-- Tabela: HZ_CUST_ACCOUNTS
+-- Acumulado RECEBIDO informado pelo cliente no schedule EDI (linha Shipped/Received – Customer CUM).
+-- Usa o último schedule do MESMO Ship To e do MESMO PO da CUM key da linha do visual.
+-- Sem schedule para aquele Ship To/PO, o resultado fica em branco (sem fallback, por decisão de negócio).
+CUM Cliente =
+VAR _ShipTos =
+    FILTER ( VALUES ( RLM_CUST_ITEM_CUM_KEYS_ALL[SHIP_TO_ADDRESS_ID] ), RLM_CUST_ITEM_CUM_KEYS_ALL[SHIP_TO_ADDRESS_ID] <> "" )
+VAR _POs =
+    FILTER ( VALUES ( RLM_CUST_ITEM_CUM_KEYS_ALL[PURCHASE_ORDER_NUMBER] ), RLM_CUST_ITEM_CUM_KEYS_ALL[PURCHASE_ORDER_NUMBER] <> "" )
+VAR _FiltraShipTo = NOT ISEMPTY ( _ShipTos )
+VAR _FiltraPO     = NOT ISEMPTY ( _POs )
+RETURN
+    CALCULATE (
+        MAX ( RLM_SCHEDULE_LINES_ALL[PRIMARY_QUANTITY] ),
+        TOPN (
+            1,
+            FILTER (
+                RLM_SCHEDULE_LINES_ALL,
+                RLM_SCHEDULE_LINES_ALL[QTY_TYPE_CODE] = "CUMULATIVE"
+                    && ( NOT _FiltraShipTo || RLM_SCHEDULE_LINES_ALL[SHIP_TO_ADDRESS_ID] IN _ShipTos )
+                    && ( NOT _FiltraPO     || RLM_SCHEDULE_LINES_ALL[CUST_PO_NUMBER]     IN _POs )
+            ),
+            RLM_SCHEDULE_LINES_ALL[HEADER_ID], DESC,
+            RLM_SCHEDULE_LINES_ALL[START_DATE_TIME], DESC,
+            RLM_SCHEDULE_LINES_ALL[LINE_ID], DESC
+        )
+    )

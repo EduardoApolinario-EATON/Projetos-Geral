@@ -1,0 +1,89 @@
+table RLM_CUST_SHIPTO_TERMS_ALL
+	isHidden
+	lineageTag: fe2b02a6-29e5-4933-bf98-b03dc0fdeec1
+
+	column CUST_SHIPTO_TERMS_ID
+		dataType: string
+		isHidden
+		lineageTag: a0631ef6-6139-4bca-8ae5-25b18ac488e5
+		summarizeBy: none
+		sourceColumn: CUST_SHIPTO_TERMS_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ADDRESS_ID
+		dataType: string
+		isHidden
+		lineageTag: a9793ab0-68ca-4e7a-8e94-e4597bc3e344
+		summarizeBy: none
+		sourceColumn: ADDRESS_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_ID
+		dataType: string
+		isHidden
+		lineageTag: da23b174-9b6e-4f2c-8c79-c0e681ef2fb7
+		summarizeBy: none
+		sourceColumn: CUSTOMER_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIP_FROM_ORG_ID
+		dataType: string
+		isHidden
+		lineageTag: 43197756-22f6-4fdc-8b26-78e5b29520d4
+		summarizeBy: none
+		sourceColumn: SHIP_FROM_ORG_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HEADER_ID
+		dataType: string
+		isHidden
+		lineageTag: 288f29c1-11f9-4201-a76e-24c87d6adb2b
+		summarizeBy: none
+		sourceColumn: HEADER_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORG_ID
+		dataType: string
+		isHidden
+		lineageTag: b4646887-a70b-4de9-8627-bab0e0a9136a
+		summarizeBy: none
+		sourceColumn: ORG_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RLM_CUST_SHIPTO_TERMS_ALL = m
+		mode: import
+		source =
+				let
+				    Fonte = PowerPlatform.Dataflows(null),
+				    Workspaces = Fonte{[Id="Workspaces"]}[Data],
+				    #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f" = Workspaces{[workspaceId="5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"]}[Data],
+				    #"8f3b264a-f27d-44a1-8c80-7adc99436f32" = #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"{[dataflowId="e07c3370-2419-4234-9c49-6a74e3d1e850"]}[Data],
+				    RLM_CUST_SHIPTO_TERMS_ALL_ = #"8f3b264a-f27d-44a1-8c80-7adc99436f32"{[entity="RLM_CUST_SHIPTO_TERMS_ALL",version=""]}[Data],
+				    #"Outras Colunas Removidas" = Table.SelectColumns(RLM_CUST_SHIPTO_TERMS_ALL_,{"CUST_SHIPTO_TERMS_ID", "ADDRESS_ID", "CUSTOMER_ID", "SHIP_FROM_ORG_ID", "HEADER_ID", "ORG_ID"})
+				in
+				    #"Outras Colunas Removidas"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+
