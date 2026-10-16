@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "a2d1d612b00b9dd30da7",
   "position": {
     "x": 836.34660421545675,
     "y": 0,
-    "z": 3001,
+    "z": 3000,
     "height": 61.951600312256055,
     "width": 195.84699453551914,
-    "tabOrder": 3001
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -135,23 +135,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "3520f923aeca6e7823a3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "HZ_CUST_ACCOUNTS"
-              }
-            },
-            "Property": "ACCOUNT_NUMBER"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -1,7 +1,63 @@
 table HZ_CUST_ACCOUNTS
 	lineageTag: 96cda074-8b24-487e-b010-fc05d03ed385
 
-	measure 'CUM Eaton' =
+	measure 'CUM Cliente' =
+			
+			VAR _ShipTos =
+			    FILTER ( VALUES ( RLM_CUST_ITEM_CUM_KEYS_ALL[SHIP_TO_ADDRESS_ID] ), RLM_CUST_ITEM_CUM_KEYS_ALL[SHIP_TO_ADDRESS_ID] <> "" )
+			VAR _POs =
+			    FILTER ( VALUES ( RLM_CUST_ITEM_CUM_KEYS_ALL[PURCHASE_ORDER_NUMBER] ), RLM_CUST_ITEM_CUM_KEYS_ALL[PURCHASE_ORDER_NUMBER] <> "" )
+			VAR _FiltraShipTo = NOT ISEMPTY ( _ShipTos )
+			VAR _FiltraPO     = NOT ISEMPTY ( _POs )
+			RETURN
+			    CALCULATE (
+			        MAX ( RLM_SCHEDULE_LINES_ALL[PRIMARY_QUANTITY] ),
+			        TOPN (
+			            1,
+			            FILTER (
+			                RLM_SCHEDULE_LINES_ALL,
+			                RLM_SCHEDULE_LINES_ALL[QTY_TYPE_CODE] = "CUMULATIVE"
+			                    && ( NOT _FiltraShipTo || RLM_SCHEDULE_LINES_ALL[SHIP_TO_ADDRESS_ID] IN _ShipTos )
+			                    && ( NOT _FiltraPO     || RLM_SCHEDULE_LINES_ALL[CUST_PO_NUMBER]     IN _POs )
+			            ),
+			            RLM_SCHEDULE_LINES_ALL[HEADER_ID], DESC,
+			            RLM_SCHEDULE_LINES_ALL[START_DATE_TIME], DESC,
+			            RLM_SCHEDULE_LINES_ALL[LINE_ID], DESC
+			        )
+			    )
+		formatString: 0
+		lineageTag: 0b63fc52-4163-4063-8df7-8cee28d79990
+
+	measure 'CUM Eaton OLD' =
+			
+			CALCULATE(
+			    MAX(RLM_CUST_ITEM_CUM_KEYS_ALL[CUM_QTY]),
+			
+			    TREATAS(
+			        VALUES(RLM_SCHEDULE_LINES_ALL[CUSTOMER_ITEM_ID]),
+			        RLM_CUST_ITEM_CUM_KEYS_ALL[CUSTOMER_ITEM_ID]
+			    ),
+			
+			    TREATAS(
+			        VALUES(RLM_SCHEDULE_HEADERS_ALL[TP LocationOLD]),
+			        HZ_CUST_ACCT_SITES_ALL[TP Location]
+			    ),
+			
+			    TREATAS(
+			        VALUES(HZ_CUST_ACCT_SITES_ALL[CUST_ACCT_SITE_ID]),
+			        RLM_CUST_ITEM_CUM_KEYS_ALL[SHIP_TO_ADDRESS_ID]
+			    )
+			)
+		formatString: 0
+		lineageTag: 11200acc-e523-4953-a3c2-ca28a1b5e1e3
+
+	measure 'Dif CUM Eaton' =
+			
+			IF ( [CUM Cliente OLD] <> [CUM Cliente], 1, 0 )
+		formatString: 0
+		lineageTag: 1d0f19a7-eca8-4f50-a570-935f8d56afbb
+
+	measure 'CUM Cliente OLD' =
 			
 			CALCULATE (
 			    MAX ( RLM_SCHEDULE_LINES_ALL[PRIMARY_QUANTITY] ),
@@ -17,30 +73,31 @@ table HZ_CUST_ACCOUNTS
 			    )
 			)
 		formatString: 0
-		lineageTag: 0b63fc52-4163-4063-8df7-8cee28d79990
+		lineageTag: e9d25fb1-f86e-42bb-a079-09294f05151b
 
-	measure 'CUM Cliente' =
+	measure 'CUM Cliente Teste' =
 			
-			CALCULATE(
-			    MAX(RLM_CUST_ITEM_CUM_KEYS_ALL[CUM_QTY]),
-			
-			    TREATAS(
-			        VALUES(RLM_SCHEDULE_LINES_ALL[CUSTOMER_ITEM_ID]),
-			        RLM_CUST_ITEM_CUM_KEYS_ALL[CUSTOMER_ITEM_ID]
-			    ),
-			
-			    TREATAS(
-			        VALUES(RLM_SCHEDULE_HEADERS_ALL[TP Location]),
-			        HZ_CUST_ACCT_SITES_ALL[ECE_TP_LOCATION_CODE]
-			    ),
-			
-			    TREATAS(
-			        VALUES(HZ_CUST_ACCT_SITES_ALL[CUST_ACCT_SITE_ID]),
-			        RLM_CUST_ITEM_CUM_KEYS_ALL[SHIP_TO_ADDRESS_ID]
-			    )
+			CALCULATE (
+			    MAX ( RLM_CUST_ITEM_CUM_KEYS_ALL[CUM_QTY] ),
+			    TREATAS ( VALUES ( RLM_SCHEDULE_LINES_ALL[CUSTOMER_ITEM_ID] ), RLM_CUST_ITEM_CUM_KEYS_ALL[CUSTOMER_ITEM_ID] )
 			)
 		formatString: 0
-		lineageTag: 11200acc-e523-4953-a3c2-ca28a1b5e1e3
+		lineageTag: 595a36b1-59f2-496c-8f7d-33f268f89553
+
+	measure 'CUM Eaton' =
+			
+			CALCULATE (
+			    MAX ( RLM_CUST_ITEM_CUM_KEYS_ALL[CUM_QTY] ),
+			    TREATAS ( VALUES ( RLM_SCHEDULE_LINES_ALL[CUSTOMER_ITEM_ID] ), RLM_CUST_ITEM_CUM_KEYS_ALL[CUSTOMER_ITEM_ID] )
+			)
+		formatString: 0
+		lineageTag: 6ccafcfe-af37-4b79-b3ca-e5bdb3e00fc0
+
+	measure 'Exibir Linha' =
+			
+			IF ( NOT ISBLANK ( [CUM Cliente] ) || NOT ISBLANK ( [CUM Eaton] ), 1 )
+		formatString: 0
+		lineageTag: 13099874-3323-48d1-8637-9f64d89cdd16
 
 	column CUST_ACCOUNT_ID
 		dataType: string

@@ -1,5 +1,5 @@
-// Tabela nova: nome do Ship To igual ao Oracle (HZ_CUST_SITE_USES_ALL.LOCATION).
-// Relacionamento: HZ_CUST_SITE_USES_ALL[CUST_ACCT_SITE_ID] 1:1 HZ_CUST_ACCT_SITES_ALL[CUST_ACCT_SITE_ID] (filtro nos dois sentidos).
+// Tabela nova (16/10/2026): nome do Ship To igual ao Oracle (HZ_CUST_SITE_USES_ALL.LOCATION).
+// Relacionamento: HZ_CUST_ACCT_SITES_ALL[CUST_ACCT_SITE_ID] 1:1 HZ_CUST_SITE_USES_ALL[CUST_ACCT_SITE_ID] (filtro nos dois sentidos).
 let
   Origem = PowerPlatform.Dataflows([]),
   #"Navegação 1" = Origem{[Id = "Workspaces"]}[Data],
@@ -13,4 +13,4 @@ let
   #"Renomeado" = Table.RenameColumns(#"Um por Site", {{"LOCATION", "Ship To"}}),
   #"Tipo" = Table.TransformColumnTypes(#"Renomeado", {{"CUST_ACCT_SITE_ID", type text}})
 in
-  #"Tipo"
+    #"Tipo"

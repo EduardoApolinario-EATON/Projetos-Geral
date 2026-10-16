@@ -171,11 +171,11 @@ table HZ_CUST_ACCT_SITES_ALL
 
 		annotation SummarizationSetBy = Automatic
 
-	column ECE_TP_LOCATION_CODE
+	column 'TP Location'
 		dataType: string
 		lineageTag: 380be4a9-297c-4968-b1b7-ab80d185bad2
 		summarizeBy: none
-		sourceColumn: ECE_TP_LOCATION_CODE
+		sourceColumn: TP Location
 
 		annotation SummarizationSetBy = Automatic
 
@@ -317,9 +317,11 @@ table HZ_CUST_ACCT_SITES_ALL
 				    Workspaces = Fonte{[Id="Workspaces"]}[Data],
 				    #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f" = Workspaces{[workspaceId="5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"]}[Data],
 				    #"8592e41f-8d88-4721-8374-660ec5f9776f" = #"5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"{[dataflowId="8592e41f-8d88-4721-8374-660ec5f9776f"]}[Data],
-				    HZ_CUST_ACCT_SITES_ALL_ = #"8592e41f-8d88-4721-8374-660ec5f9776f"{[entity="HZ_CUST_ACCT_SITES_ALL",version=""]}[Data]
+				    HZ_CUST_ACCT_SITES_ALL_ = #"8592e41f-8d88-4721-8374-660ec5f9776f"{[entity="HZ_CUST_ACCT_SITES_ALL",version=""]}[Data],
+				  #"Renamed Columns" = Table.RenameColumns(HZ_CUST_ACCT_SITES_ALL_, {{"ECE_TP_LOCATION_CODE", "TP "}}),
+				  #"Renamed Columns 1" = Table.RenameColumns(#"Renamed Columns", {{"TP ", "TP Location"}})
 				in
-				    HZ_CUST_ACCT_SITES_ALL_
+				    #"Renamed Columns 1"
 
 	annotation PBI_NavigationStepName = Navegação
 

@@ -148,3 +148,9 @@ relationship d1850fac-5df7-4e2e-559c-363e3c7a0093
 	fromColumn: RLM_CUST_ITEM_CUM_KEYS_ALL.CUSTOMER_ITEM_ID
 	toColumn: MTL_CUSTOMER_ITEM_XREFS.CUSTOMER_ITEM_ID
 
+relationship 5a96baaf-4394-110e-ca47-f4576a8a8a7e
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: HZ_CUST_ACCT_SITES_ALL.CUST_ACCT_SITE_ID
+	toColumn: HZ_CUST_SITE_USES_ALL.CUST_ACCT_SITE_ID
+

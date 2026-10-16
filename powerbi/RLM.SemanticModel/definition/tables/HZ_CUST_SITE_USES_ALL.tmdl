@@ -1,0 +1,47 @@
+table HZ_CUST_SITE_USES_ALL
+	lineageTag: 895f8ee8-d518-4d4d-9a29-330254d79748
+
+	column CUST_ACCT_SITE_ID
+		dataType: string
+		lineageTag: 964cba44-e8a7-4e71-b5da-8548d93d346b
+		summarizeBy: none
+		sourceColumn: CUST_ACCT_SITE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		dataType: string
+		lineageTag: 9e225ebf-6831-4415-bc89-8455ef12ac32
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship To'
+		dataType: string
+		lineageTag: d3c347f7-05d4-4a6b-a0e5-bc5bca759192
+		summarizeBy: none
+		sourceColumn: Ship To
+
+		annotation SummarizationSetBy = Automatic
+
+	partition HZ_CUST_SITE_USES_ALL = m
+		mode: import
+		source =
+				let
+				  Origem = PowerPlatform.Dataflows([]),
+				  #"Navegação 1" = Origem{[Id = "Workspaces"]}[Data],
+				  #"Navegação 2" = #"Navegação 1"{[workspaceId = "5f0e4cee-9281-4b9e-88fb-7af2b207ce9f"]}[Data],
+				  #"Navegação 3" = #"Navegação 2"{[dataflowId = "8592e41f-8d88-4721-8374-660ec5f9776f"]}[Data],
+				  #"Navegação 4" = #"Navegação 3"{[entity = "HZ_CUST_SITE_USES_ALL", version = ""]}[Data],
+				  #"Somente Ship To" = Table.SelectRows(#"Navegação 4", each [SITE_USE_CODE] = "SHIP_TO"),
+				  #"Colunas" = Table.SelectColumns(#"Somente Ship To", {"CUST_ACCT_SITE_ID", "LOCATION", "STATUS"}),
+				  #"Ativos Primeiro" = Table.Buffer(Table.Sort(#"Colunas", {{"STATUS", Order.Ascending}})),
+				  #"Um por Site" = Table.Distinct(#"Ativos Primeiro", {"CUST_ACCT_SITE_ID"}),
+				  #"Renomeado" = Table.RenameColumns(#"Um por Site", {{"LOCATION", "Ship To"}}),
+				  #"Tipo" = Table.TransformColumnTypes(#"Renomeado", {{"CUST_ACCT_SITE_ID", type text}})
+				in
+				    #"Tipo"
+
+	annotation PBI_ResultType = Table
+

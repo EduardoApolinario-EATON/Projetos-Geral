@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "c927d05886d7f0b4cde3",
   "position": {
     "x": 365.71428571428572,
@@ -51,6 +51,51 @@
       "general": [
         {
           "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "r",
+                    "Entity": "RLM_SCHEDULE_LINES_ALL",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Contains": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "r"
+                              }
+                            },
+                            "Property": "PN Cliente"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'r536136'"
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
+                    }
+                  }
+                ]
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -81,7 +126,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "''"
+                                "Value": "'R536136'"
                               }
                             }
                           ]
@@ -91,18 +136,29 @@
                   }
                 ]
               }
-            },
-            "selfFilterEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "071c9c2b2c3b9943a49c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_SCHEDULE_LINES_ALL"
+              }
+            },
+            "Property": "PN Cliente"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

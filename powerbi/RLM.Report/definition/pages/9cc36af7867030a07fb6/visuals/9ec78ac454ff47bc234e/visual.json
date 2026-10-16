@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "9ec78ac454ff47bc234e",
   "position": {
     "x": 0,
     "y": 87.272727272727266,
-    "z": 3000,
+    "z": 2000,
     "height": 632.72727272727263,
     "width": 1280,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "tableEx",
@@ -34,14 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "HZ_CUST_ACCOUNTS"
+                      "Entity": "HZ_CUST_SITE_USES_ALL"
                     }
                   },
-                  "Property": "ACCOUNT_NUMBER"
+                  "Property": "Ship To"
                 }
               },
-              "queryRef": "HZ_CUST_ACCOUNTS.ACCOUNT_NUMBER",
-              "nativeQueryRef": "ACCOUNT_NUMBER"
+              "queryRef": "HZ_CUST_SITE_USES_ALL.Ship To",
+              "nativeQueryRef": "Ship To"
             },
             {
               "field": {
@@ -90,6 +90,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "HZ_CUST_ACCT_SITES_ALL"
+                    }
+                  },
+                  "Property": "TP Location"
+                }
+              },
+              "queryRef": "HZ_CUST_ACCT_SITES_ALL.TP Location",
+              "nativeQueryRef": "TP Location"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "MTL_SYSTEM_ITEMS_B"
                     }
                   },
@@ -104,14 +118,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "RLM_SCHEDULE_HEADERS_ALL"
+                      "Entity": "RLM_CUST_ITEM_CUM_KEYS_ALL"
                     }
                   },
-                  "Property": "TP Location"
+                  "Property": "PURCHASE_ORDER_NUMBER"
                 }
               },
-              "queryRef": "RLM_SCHEDULE_HEADERS_ALL.TP Location",
-              "nativeQueryRef": "TP Location"
+              "queryRef": "RLM_CUST_ITEM_CUM_KEYS_ALL.PURCHASE_ORDER_NUMBER",
+              "nativeQueryRef": "PURCHASE_ORDER_NUMBER"
             },
             {
               "field": {
@@ -129,55 +143,10 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "RLM_SCHEDULE_HEADERS_ALL"
-                  }
-                },
-                "Property": "TP Location"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
       }
     },
     "objects": {
       "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "191.9282109806235D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "RLM_SCHEDULE_HEADERS_ALL.TP Location"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "117.96801322399931D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "HZ_CUST_ACCOUNTS.CUM Eaton"
-          }
-        },
         {
           "properties": {
             "value": {
@@ -190,20 +159,6 @@
           },
           "selector": {
             "metadata": "RLM_SCHEDULE_LINES_ALL.PN Cliente"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "170.967993754879D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "HZ_CUST_ACCOUNTS.ACCOUNT_NUMBER"
           }
         }
       ],
@@ -271,60 +226,7 @@
             }
           },
           "selector": {
-            "metadata": "HZ_CUST_ACCOUNTS.CUM Eaton"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            }
-          },
-          "selector": {
             "metadata": "RLM_SCHEDULE_LINES_ALL.PN Cliente"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "HZ_CUST_ACCOUNTS.ACCOUNT_NUMBER"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "null"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "RLM_SCHEDULE_HEADERS_ALL.TP Location"
           }
         }
       ],
@@ -403,6 +305,19 @@
             }
           }
         }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -438,7 +353,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "fd556bf88eb40419c267",
+        "name": "bcb9881a695760dae8f5",
         "field": {
           "Measure": {
             "Expression": {
@@ -446,7 +361,7 @@
                 "Entity": "HZ_CUST_ACCOUNTS"
               }
             },
-            "Property": "CUM Eaton"
+            "Property": "Exibir Linha"
           }
         },
         "type": "Advanced",
@@ -462,35 +377,32 @@
           "Where": [
             {
               "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "h"
-                            }
-                          },
-                          "Property": "CUM Eaton"
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "h"
                         }
                       },
-                      "Right": {
-                        "Literal": {
-                          "Value": "null"
-                        }
-                      }
+                      "Property": "Exibir Linha"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
                     }
                   }
                 }
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       },
       {
-        "name": "e2d1394eac044314251e",
+        "name": "de0f4a3214d3f4c365d2",
         "field": {
           "Column": {
             "Expression": {
@@ -504,21 +416,7 @@
         "type": "Categorical"
       },
       {
-        "name": "98ccf564da0260510477",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "HZ_CUST_ACCOUNTS"
-              }
-            },
-            "Property": "ACCOUNT_NUMBER"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "20df80b5767d0d2c5c73",
+        "name": "0939c31a0b7eba4082c3",
         "field": {
           "Column": {
             "Expression": {
@@ -532,12 +430,12 @@
         "type": "Categorical"
       },
       {
-        "name": "563c1d2985001c68e1e2",
+        "name": "6ad28b72badce60fbb69",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "RLM_SCHEDULE_HEADERS_ALL"
+                "Entity": "HZ_CUST_ACCT_SITES_ALL"
               }
             },
             "Property": "TP Location"
@@ -546,21 +444,7 @@
         "type": "Categorical"
       },
       {
-        "name": "7c5163682815440e315a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "RLM_CUST_ITEM_CUM_KEYS_ALL"
-              }
-            },
-            "Property": "LAST_UPDATE_DATE"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7cc69605b62ee4674d02",
+        "name": "ec24e7683913f5dbb25b",
         "field": {
           "Column": {
             "Expression": {
@@ -574,7 +458,49 @@
         "type": "Categorical"
       },
       {
-        "name": "b42f1502ba78729e2d1e",
+        "name": "d23c5e01fae26b9bbeff",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_CUST_ITEM_CUM_KEYS_ALL"
+              }
+            },
+            "Property": "PURCHASE_ORDER_NUMBER"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ef37593291ff9c5c457e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "RLM_CUST_ITEM_CUM_KEYS_ALL"
+              }
+            },
+            "Property": "LAST_UPDATE_DATE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "414dac996f6c14d4576e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "HZ_CUST_ACCOUNTS"
+              }
+            },
+            "Property": "CUM Eaton"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1fe0c2e557d680b06611",
         "field": {
           "Measure": {
             "Expression": {
@@ -586,6 +512,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "47d47c0eb1bd7d22dd6d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "HZ_CUST_SITE_USES_ALL"
+              }
+            },
+            "Property": "Ship To"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

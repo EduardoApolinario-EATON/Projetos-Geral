@@ -62,7 +62,7 @@ No Oracle: **Release Management Workbench → Schedule → Lines → item → li
 
 Uma conta pode ter **vários Ship Tos**, e cada um tem seu TP Location e suas CUM keys.
 
-> **Atenção:** o header do schedule também tem um "TP Location" (`ECE_TP_LOCATION_CODE_EXT`), mas esse é o código do **envelope EDI**, não necessariamente o do Ship To de cada linha. A John Deere, por exemplo, manda schedules com header `07076` mesmo tendo dois Ship Tos. Por isso o report **não usa** o TP do header.
+> **Atenção:** o header do schedule também tem um "TP Location" (`ECE_TP_LOCATION_CODE_EXT`), mas esse é o código do **envelope EDI**, não necessariamente o do Ship To de cada linha. A John Deere, por exemplo, manda schedules com header `07076` mesmo tendo dois Ship Tos. Por isso o report **não usa** o TP do header. No modelo, essa coluna se chama `RLM_SCHEDULE_HEADERS_ALL[TP LocationOLD]`.
 
 ---
 
@@ -75,7 +75,7 @@ Todas as tabelas vêm de **Dataflows** do Power BI, que são cópias de tabelas 
 | `RLM_SCHEDULE_LINES_ALL` | Linhas dos schedules EDI → **CUM Cliente** e PN Cliente | `CUSTOMER_ITEM_ID`, `CUSTOMER_ITEM_EXT` (PN Cliente), `SHIP_TO_ADDRESS_ID`, `CUST_PO_NUMBER`, `QTY_TYPE_CODE`, `PRIMARY_QUANTITY`, `HEADER_ID`, `START_DATE_TIME`, `LINE_ID` |
 | `RLM_SCHEDULE_HEADERS_ALL` | Cabeçalho do schedule (cliente do schedule) | `HEADER_ID`, `CUSTOMER_ID`, `TP Location` (do envelope, **não usado no visual**) |
 | `RLM_CUST_ITEM_CUM_KEYS_ALL` | CUM keys → **CUM Eaton** | `CUSTOMER_ITEM_ID`, `SHIP_TO_ADDRESS_ID`, `PURCHASE_ORDER_NUMBER`, `CUM_QTY`, `LAST_UPDATE_DATE`, `INACTIVE_FLAG`, `SHIP_FROM_ORG_ID` |
-| `HZ_CUST_ACCT_SITES_ALL` | Sites (endereços) do cliente → **TP Location** | `CUST_ACCT_SITE_ID`, `ECE_TP_LOCATION_CODE` |
+| `HZ_CUST_ACCT_SITES_ALL` | Sites (endereços) do cliente → **TP Location** | `CUST_ACCT_SITE_ID`, `TP Location` (= `ECE_TP_LOCATION_CODE` do Oracle, renomeada) |
 | `HZ_CUST_SITE_USES_ALL` | Uso SHIP_TO do site → **Ship To** (nome igual ao do Oracle) | `CUST_ACCT_SITE_ID`, `Ship To` (`LOCATION`) |
 | `HZ_CUST_ACCOUNTS` | Conta do cliente | `CUST_ACCOUNT_ID`, `ACCOUNT_NUMBER` |
 | `HZ_PARTIES` | Nome do cliente | `PARTY_ID`, `Cliente` |
@@ -197,9 +197,10 @@ IF ( NOT ISBLANK ( [CUM Eaton] ) || NOT ISBLANK ( [CUM Cliente] ), 1 )
 |---|---|
 | Slicer Cliente | `HZ_PARTIES[Cliente]` |
 | Slicer PN Cliente | `RLM_SCHEDULE_LINES_ALL[PN Cliente]` |
-| Slicer TP Location | `HZ_CUST_ACCT_SITES_ALL[ECE_TP_LOCATION_CODE]` (TP do **Ship To**) |
+| Slicer TP Location | `HZ_CUST_ACCT_SITES_ALL[TP Location]` (TP do **Ship To**) |
 | Slicer ACCOUNT_NUMBER | `HZ_CUST_ACCOUNTS[ACCOUNT_NUMBER]` |
-| Tabela | Cliente, ACCOUNT_NUMBER, CUM Cliente, PN Cliente, CUM Eaton, TP Location, Ship To, PN Eaton, PURCHASE_ORDER_NUMBER, LAST_UPDATE_DATE |
+| Slicer Ship To | `HZ_CUST_SITE_USES_ALL[Ship To]` |
+| Tabela | Cliente, Ship To, CUM Cliente, PN Cliente, CUM Eaton, TP Location, PN Eaton, PURCHASE_ORDER_NUMBER, LAST_UPDATE_DATE |
 | Filtro do visual | **Exibir Linha = 1** |
 
 - **Uma linha = um Ship To + item + PO** (uma CUM key).
@@ -248,7 +249,7 @@ As CUM keys de **todos** os Ship Tos da conta apareciam embaixo do TP do header,
 
 | # | Problema | Causa | Correção |
 |---|---|---|---|
-| 1 | TP 78766 não aparecia no slicer | Slicer usava o TP do header do schedule (envelope EDI) | TP Location passou a vir de `HZ_CUST_ACCT_SITES_ALL[ECE_TP_LOCATION_CODE]` |
+| 1 | TP 78766 não aparecia no slicer | Slicer usava o TP do header do schedule (envelope EDI) | TP Location passou a vir de `HZ_CUST_ACCT_SITES_ALL[TP Location]` (= `ECE_TP_LOCATION_CODE`) |
 | 2 | PNs duplicados com CUM vazio | CUM keys de outros Ship Tos agrupadas no TP do header | Mesma correção do item 1 |
 | 3 | CUM do schedule vinha de outro PO/Ship To (ex.: 394.752 em vez de 47.136) | Medida pegava o schedule mais recente do item, sem olhar Ship To/PO | Medida do schedule filtra pelo Ship To e PO da CUM key |
 | 4 | CUM das CUM keys sempre vazio no 78766 | Medida exigia que o TP do Ship To aparecesse no header | Removido o filtro pelo TP do header |
